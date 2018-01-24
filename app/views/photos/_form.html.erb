@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :year %>
-    <%= form.text_field :year, id: :photo_year %>
+    <%= form.select :year, ['2018','2017','2016','2015','2014'], id: :photo_year %>
   </div>
 
   <div class="field">
     <%= form.label :month %>
-    <%= form.text_field :month, id: :photo_month %>
+    <%= form.select :month, ['January','February','March','April','May','June','July','August','September','October','November','December'], id: :photo_month %>
   </div>
 
   <div class="actions">

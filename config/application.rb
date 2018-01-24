@@ -16,3 +16,5 @@ module Explorereric
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"

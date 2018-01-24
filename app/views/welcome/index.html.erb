@@ -1,1 +1,7 @@
-<h1>Hello, Rails!</h1>
+<h1>Explorer Eric</h1>
+
+<%= form_tag(photos_path, :method => "get", id: "search-form") do %>
+    Country: <%= select :country, params[:country], options_for_select(Photo::COUNTRIES), allow_blank: true, :prompt => "Select Country" %>
+	Year: <%= select :year, params[:year], options_for_select(Photo::YEARS), allow_blank: true, :prompt => "Select Year" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
