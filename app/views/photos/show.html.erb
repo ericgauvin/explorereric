@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @photo.image %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @photo.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @photo.city %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @photo.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @photo.month %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
