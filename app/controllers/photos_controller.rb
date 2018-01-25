@@ -5,22 +5,28 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
-	if (!params[:country].empty? && !params[:year].empty?)
-		country = params[:country]
-		year = params[:year]
-		@photos = Photo.search(country: country, year: year).order("created_at DESC")
-		
-	elsif (!params[:country].empty? && params[:year].empty?)
-		country = params[:country]
-		@photos = Photo.search(country: country).order("created_at DESC")
-		
-	elsif (params[:country].empty? && !params[:year].empty?)
-		year = params[:year]
-		@photos = Photo.search(year: year).order("created_at DESC")
-		
-	else
-		@photos = Photo.all.order("created_at ASC")
-	end
+
+      if (params.has_key?(:country))
+
+    	if (!params[:country].empty? && !params[:year].empty?)
+    		country = params[:country]
+    		year = params[:year]
+    		@photos = Photo.search(country: country, year: year).order("created_at DESC")
+
+    	elsif (!params[:country].empty? && params[:year].empty?)
+    		country = params[:country]
+    		@photos = Photo.search(country: country).order("created_at DESC")
+
+    	elsif (params[:country].empty? && !params[:year].empty?)
+    		year = params[:year]
+    		@photos = Photo.search(year: year).order("created_at DESC")
+
+    end
+
+  	else
+  		@photos = Photo.all.order("created_at ASC")
+  	end
+
   end
 
   # GET /photos/1

@@ -8,8 +8,8 @@ class Photo < ActiveRecord::Base
 		result = result.where("year like ?", "%#{query_hash[:year]}%") if query_hash[:year]
 		result
 	end
- 
-	COUNTRIES = Photo.pluck(:country).sort
-	YEARS = Photo.pluck(:year).sort
- 
+
+	COUNTRIES = Photo.pluck(:country)
+	YEARS = Photo.pluck(:year)
+
 end
