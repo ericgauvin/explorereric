@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Explorereric</title>
+    <title>Explorer Eric: Explore Your World</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <table class="header_main">
+<tr>
+<td width = 73%>
+	<h1>Explorer Eric</h1>
+</td>
+<td>
+<p class="header_links">
+	<%= link_to "Home", welcome_index_path, class: "header_links" %>&nbsp;&nbsp;
+	<%= link_to "Countries", countries_page_path,  class: "header_links" %>&nbsp;&nbsp;
+	Login&nbsp;&nbsp;
+	Sign Up
+</p>
+</td>
+</tr>
+</table>
     <%= yield %>
+	<div class="copyright">
+Copyright 2018 Eric Gauvin
+</div>
   </body>
-</html>
+  </html>

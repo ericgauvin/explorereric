@@ -13,3 +13,96 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin: 0px auto;
+	width: 1180px;
+	background-color: #b5e2eb;
+	align: center;
+ }
+ 
+.main_content {
+	background-color: #FFFFFF;
+	display: block;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	height: 610px;
+}
+a:hover {
+	text-decoration: none;
+}
+ 
+.header_main {
+	color: #FFF;
+	background-color: #000;
+	padding: 4px 50px;
+	display: flex;
+}
+
+.header_links {
+	font-size: 12pt;
+	color: #FFF;
+}
+
+.header_links a:link {
+	color: #FFF;	
+	text-decoration: none;
+}
+
+.header_links a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.header_links a:hover {
+	text-decoration: underline;	
+}
+
+.background_image {
+	padding: 0px 0px;
+	border: none;
+	display: block;
+}
+
+.index_search {
+	color: #FFF;
+	background-color: #000;
+	padding: 10px;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	height: 190px;
+}
+
+.copyright {
+		color: #FFF;
+	background-color: #000;
+	padding: 10px;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.photo_album {
+	padding: 20px;
+}
+
+.show_image {
+	text-align: center;	
+}
+
+.country_search {
+	text-align: center;
+}
+
+.country_photo {
+	display: block;
+	text-align: center;
+}
