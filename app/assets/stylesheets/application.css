@@ -22,7 +22,7 @@
 	background-color: #b5e2eb;
 	align: center;
  }
- 
+
 .main_content {
 	background-color: #FFFFFF;
 	display: block;
@@ -31,12 +31,13 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 10px;
-	height: 610px;
+	height: 100%;
 }
+
 a:hover {
 	text-decoration: none;
 }
- 
+
 .header_main {
 	color: #FFF;
 	background-color: #000;
@@ -50,7 +51,7 @@ a:hover {
 }
 
 .header_links a:link {
-	color: #FFF;	
+	color: #FFF;
 	text-decoration: none;
 }
 
@@ -60,7 +61,7 @@ a:hover {
 }
 
 .header_links a:hover {
-	text-decoration: underline;	
+	text-decoration: underline;
 }
 
 .background_image {
@@ -95,11 +96,12 @@ a:hover {
 }
 
 .show_image {
-	text-align: center;	
+	text-align: center;
 }
 
 .country_search {
 	text-align: center;
+  padding: 20px;
 }
 
 .country_photo {

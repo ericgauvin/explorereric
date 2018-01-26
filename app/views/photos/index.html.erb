@@ -3,13 +3,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Photos</h1>
-
+<center>
 <% @photos.each do |photo| %>
 	<%= link_to photo do %>
 	<img src="<%= photo.image.profile_size %>" class="photo_album">
 	<% end %>
 <% end %>
-
+</center>
 <br>
 
 <%= link_to 'New Photo', new_photo_path %>
