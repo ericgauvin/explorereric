@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
 	def show
-		render template: "countries/#{params[:country]}"
+		render template: "/countries/countries"
 	end
 end

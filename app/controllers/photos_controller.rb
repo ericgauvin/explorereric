@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :verify_authenticity_token
   # GET /photos
   # GET /photos.json
   def index

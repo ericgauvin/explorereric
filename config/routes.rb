@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  get '/countries/countries', :as => 'countries_page'
-  
+
   resources :photos
+  resources :users
+  
+  get 'welcome/index'
+  get 'countries', :to => 'countries#show'
 
   root 'welcome#index'
   root 'countries#show', countries: 'countries'

@@ -2,7 +2,6 @@
 
 <% @COUNTRIES = Photo.pluck(:country).sort %>
 <% @COUNTRIES_LENGTH = @COUNTRIES.length %>
-<% @COUNTER = 1 %>
 <% @TABLE_ROWS = (@COUNTRIES_LENGTH / 3).ceil %>
 
 <h1>Countries</h1>
