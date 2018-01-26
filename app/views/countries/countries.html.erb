@@ -1,0 +1,17 @@
+<div class="main_content">
+
+<% @COUNTRIES = Photo.pluck(:country).sort %>
+
+<table>
+<tr>
+<% @COUNTRIES.each do |x| %>
+<td class="country_search">
+	<% @photos = Photo.search(country: x) %>
+	<a href="/photos?utf8=✓&country=<%= x %>&year=">
+	<img src="<%= @photos.first.image.profile_size %>" class="country_photo">
+	<%= x %></a>
+</td>
+<% end %>
+</tr>
+</table>
+</div>
