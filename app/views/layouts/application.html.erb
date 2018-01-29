@@ -10,15 +10,22 @@
   <body>
   <table class="header_main">
 <tr>
-<td width = 73%>
+<td width = 71%>
 	<h1>Explorer Eric</h1>
 </td>
 <td>
 <p class="header_links">
 	<%= link_to "Home", root_path, class: "header_links" %>&nbsp;&nbsp;
 	<%= link_to "Countries", countries_path,  class: "header_links" %>&nbsp;&nbsp;
-	<%= link_to "Sign Up", new_user_path,  class: "header_links" %>&nbsp;&nbsp;
-	Login
+
+  <% if logged_in? %>
+      <%= link_to "Profile", current_user, class: "header_links" %>&nbsp;&nbsp;
+      <%= link_to "Log Out", logout_path, method: :delete, class: "header_links" %>&nbsp;&nbsp;
+  <% else %>
+    <%= link_to "Sign Up", signup_path,  class: "header_links" %>&nbsp;&nbsp;
+    <%= link_to "Log In", login_path,  class: "header_links" %>&nbsp;&nbsp;
+  <% end %>
+
 </p>
 </td>
 </tr>
