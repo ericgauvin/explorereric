@@ -3,8 +3,8 @@
 <h2>Where do you want to go today?</h2>
 <p>
 <%= form_tag(photos_path, :method => "get", id: "search-form") do %>
-    Country: <%= select_tag :country, options_for_select(Photo::COUNTRIES), allow_blank: true, :prompt => "Select Country" %>
-	Year: <%= select_tag :year, options_for_select(Photo::YEARS), allow_blank: true, :prompt => "Select Year" %>
+    Country: <%= select_tag :country, options_for_select(Photo::COUNTRIES.uniq.sort), allow_blank: true, :prompt => "Select Country" %>
+	Year: <%= select_tag :year, options_for_select(Photo::YEARS.uniq.sort), allow_blank: true, :prompt => "Select Year" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 </p>

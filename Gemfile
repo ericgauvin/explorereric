@@ -59,3 +59,6 @@ gem 'fog'
 gem 'figaro'
 gem 'unf'
 gem 'mini_magick'
+
+gem 'jquery-rails'
+gem 'bootstrap-sass'
