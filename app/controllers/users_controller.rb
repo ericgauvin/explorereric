@@ -4,12 +4,30 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if logged_in?
+      if current_user.role == 'admin'
+        @users = User.all
+      else
+        redirect_to new_user_path
+     end
+   else
+      redirect_to new_user_path
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if logged_in?
+      if current_user.role != 'admin'
+        @user = current_user
+      elsif current_user.role == 'admin'
+      else
+         redirect_to login_path
+      end 
+    else
+      redirect_to login_path
+    end
   end
 
   # GET /users/new
@@ -19,6 +37,16 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if logged_in?
+      if current_user.role != 'admin'
+        @user = current_user
+      elsif current_user.role == 'admin'
+      else
+         redirect_to login_path
+      end 
+    else
+      redirect_to login_path
+    end
   end
 
   # POST /users

@@ -27,9 +27,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :role %>
-    <%= form.text_field :role, id: :user_role %>
+  <%= form.label :password_confirmation, "Confirmation" %>
+  <%= form.password_field :password_confirmation, class: 'form-control' %>
   </div>
+
+<% if logged_in? %>
+  <% if current_user.role == 'admin' %>
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.select :role, ["admin", "standard"], id: :user_role %>
+  </div>
+    <% end %>
+    <% end %>
 
   <div class="actions">
     <%= form.submit %>

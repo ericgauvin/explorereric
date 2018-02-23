@@ -29,7 +29,7 @@
 </p>
 
 <% if logged_in? %>
-	<% if current_user.email == 'eric.j.gauvin@gmail.com' %>
+	<% if current_user.role == 'admin' %>
 		<%= link_to 'Edit', edit_photo_path(@photo) %> |
 		<%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %> |
 	<% end %>
