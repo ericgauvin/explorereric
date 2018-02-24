@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to @user, notice: 'User was successfully created. Welcome to Explorer Eric!' }
+        format.html { redirect_to @user, notice: "User was successfully created. Welcome to Explorer Eric, #{@user.name}!" }
 
       else
         format.html { render :new }
@@ -85,7 +85,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -38,7 +38,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     if logged_in?
-      if current_user.role != admin
+      if current_user.role != 'admin'
         redirect_to photos_path
       else
         @photo = Photo.new

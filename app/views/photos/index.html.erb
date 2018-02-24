@@ -5,15 +5,17 @@
 <h1>Photos</h1>
 <center>
 <% @photos.each do |photo| %>
+	<div class="photo_album">
 	<%= link_to photo do %>
-	<img src="<%= photo.image.profile_size %>" class="photo_album">
+	<img src="<%= photo.image.profile_size %>" class="photo_list">
 	<% end %>
+	</div>
 <% end %>
 </center>
 <br>
 
 <%if logged_in? %>
-	<% if current_user.email == 'eric.j.gauvin@gmail.com' %>
+	<% if current_user.role == 'admin' %>
 		<%= link_to 'New Photo', new_photo_path %>
 	<% end %>
 <% end %>

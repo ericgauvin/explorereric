@@ -35,9 +35,17 @@
 	margin-bottom: 0px;
 }
 
-a:hover {
+.main_content a {
 	text-decoration: none;
 }
+
+.main_content a:hover {
+	text-decoration: underline;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+
 
 .header_main {
 	color: #FFF;
@@ -93,8 +101,21 @@ a:hover {
 }
 
 .photo_album {
-	padding: 20px;
+	padding: 10px;
+	display: inline;
 }
+
+.photo_album a:hover {
+	background-color: #315856;
+
+
+}
+
+.photo_list{
+		padding-bottom: 20px;
+		padding-top: 10px;
+	}
+
 
 .show_image {
 	text-align: center;
@@ -102,8 +123,9 @@ a:hover {
 
 .country_search {
 	text-align: center;
-  padding: 20px;
+  	padding: 20px;
 }
+
 
 .country_photo {
 	display: block;

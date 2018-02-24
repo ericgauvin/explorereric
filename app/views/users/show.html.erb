@@ -25,7 +25,17 @@
 <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Change Password', edit_user_path(@user) %>
+ |
+ <%= link_to 'Home', root_path %>
+<% if logged_in? && current_user.role == 'admin' %>
+<p><b>Admin Tools</b></p>
+ <%= link_to 'Manage Users', users_path %>
+ |
+ <%= link_to 'Add Photos', new_photo_path %>
+<% end %>
+
+
+
 
 </div>
