@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :photos
+  resources :comments
   resources :users
 
   get 'welcome/index'

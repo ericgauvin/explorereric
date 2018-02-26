@@ -5,7 +5,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <img src="<%= @photo.image.profile_size %>">
+  <img src="<%= @photo.image %>">
 </p>
 
 <p>
@@ -27,14 +27,60 @@
   <strong>Month:</strong>
   <%= @photo.month %>
 </p>
+<br>
+<p>
+  <strong>Comments</strong>
+  <% if @photo.comments.length != 0 %>
+  <center>
+  <table>
+  <th>User Name</th>
+  <th>Comment</th>
+  <th>Date</th>
+
+  <% @photo.comments.each do |comment| %>
+  <tr>
+  <td><%= comment.user.name %></td>
+  <td><%= comment.content %></td>
+  <td><%= comment.created_at %></td>
+  <% if logged_in? %>
+   <% if current_user.id == comment.user.id %>
+  <td><%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    <% end %>
+  <% end %>
+  </tr>
+  <% end %>
+</table>
+</center>
+<% else %>
+<p><i>There are no comments for this photo.</i></p>
+<% end %>
+</p>
 
 <% if logged_in? %>
-	<% if current_user.role == 'admin' %>
-		<%= link_to 'Edit', edit_photo_path(@photo) %> |
-		<%= link_to 'Delete', @photo, method: :delete, data: { confirm: 'Are you sure?' } %> |
-	<% end %>
+<p>
+<%= form_for (Comment.create) do |f| %>
+<%= f.text_field :content %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :photo_id, value: @photo.id %>
+<%= f.submit %>
 <% end %>
+</p>
+<% else %>
+<%= form_for (Comment.create) do |f| %>
+<%= f.text_field :content, disabled: true %>
+<button type="button" disabled>Create Comment</button>
+<% end %>
+<p><i>Please <%= link_to "log in", login_path %> to comment on photos.</i></p>
+<% end %>
+
 <%= link_to 'Back', photos_path %>
+
+<% if logged_in? && current_user.role == 'admin' %>
+    <br><br>
+    <p><b>Admin Tools</b></p>
+    <%= link_to 'Edit', edit_photo_path(@photo) %> |
+    <%= link_to 'Delete', @photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
 </div>
 </div>

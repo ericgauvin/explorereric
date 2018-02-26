@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
   validates_presence_of :image
   mount_uploader :image, PhotoUploader
+  has_many :comments, dependent: :destroy
 
 	def self.search(query_hash)
 		result = all

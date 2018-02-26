@@ -131,3 +131,12 @@
 	display: block;
 	text-align: center;
 }
+
+.user_content {
+	text-align: center;
+}
+
+.user_table {
+	margin-left: auto;
+	margin-right: auto;
+}

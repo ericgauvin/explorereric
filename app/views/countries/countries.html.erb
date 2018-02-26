@@ -17,9 +17,9 @@
 			<% end %>
 		<td class="country_search">
 		<% @photos = Photo.search(country: @COUNTRIES[0]) %>
-		<a href="/photos?utf8=✓&country=<%= @COUNTRIES[0] %>&year=">
+		<h4><a href="/photos?utf8=✓&country=<%= @COUNTRIES[0] %>&year=">
 		<img src="<%= @photos.first.image.profile_size %>" class="country_photo">
-		<%= @COUNTRIES[0] %></a>
+		<%= @COUNTRIES[0] %></a></h4>
 		</td>
 		<% @COUNTRIES.shift %>
 		<% i += 1 %>
