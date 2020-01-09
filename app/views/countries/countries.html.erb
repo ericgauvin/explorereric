@@ -1,4 +1,4 @@
-<div class="main_content">
+<div class="main-content">
 
 <% @COUNTRIES = Photo.pluck(:country).sort %>
 <% @COUNTRIES_LENGTH = @COUNTRIES.length %>
@@ -7,7 +7,7 @@
 <h1>Countries</h1>
 <center>
 <h3>Please select a country to view pictures.</h3>
-<table class="countries_table">
+<table class="countries-table">
 
 <% for x in 0..@TABLE_ROWS %>
 	<tr>
@@ -15,10 +15,11 @@
 		<% if @COUNTRIES.empty? then %>
 			<%	break %>
 			<% end %>
-		<td class="country_search">
+		<td class="country-search">
 		<% @photos = Photo.search(country: @COUNTRIES[0]) %>
 		<h4><a href="/photos?utf8=✓&country=<%= @COUNTRIES[0] %>&year=">
 		<img src="<%= @photos.first.image.profile_size %>" class="country_photo">
+		<br>
 		<%= @COUNTRIES[0] %></a></h4>
 		</td>
 		<% @COUNTRIES.shift %>

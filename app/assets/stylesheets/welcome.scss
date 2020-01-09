@@ -1,3 +1,30 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background-image {
+	padding: 0px 0px;
+	border: none;
+	display: block;
+}
+
+.index-search {
+	color: #FFF;
+	background-color: #000;
+	padding: 10px;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	height: 190px;
+}
+
+.copyright {
+	color: #FFF;
+	background-color: #000;
+	padding: 10px;
+	margin: 0px auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}

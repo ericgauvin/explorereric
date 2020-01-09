@@ -1,4 +1,4 @@
-<div class="main_content">
+<div class="main-content">
 
 <p id="notice"><%= notice %></p>
 
@@ -7,9 +7,9 @@
 <h3>Please select a photo to view details and add comments.</h3>
 
 <% @photos.each do |photo| %>
-	<div class="photo_album">
+	<div class="photo-album">
 	<%= link_to photo do %>
-	<img src="<%= photo.image.profile_size %>" class="photo_list">
+	<img src="<%= photo.image.profile_size %>" class="photo-list">
 	<% end %>
 	</div>
 <% end %>
