@@ -1,6 +1,6 @@
 <%= form_with(model: photo, local: true) do |form| %>
   <% if photo.errors.any? %>
-    <div id="error_explanation">
+    <div id="error-explanation">
       <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
       <ul>
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :year %>
-    <%= form.select :year, ['2018','2017','2016','2015','2014'], id: :photo_year %>
+    <%= form.select :year, [*2014..Date.today.year].reverse, id: :photo_year %>
   </div>
 
   <div class="field">
